@@ -1,0 +1,27 @@
+---
+title: "Project 13"
+output: html_notebook
+---
+set the working directory
+
+
+import the dataset
+```{r}
+regression<-read.csv("Regression.csv")
+```
+
+use the linear model (lm) command to create the model we'll work with and call the model
+```{r}
+fit<- lm(regression$ROLL ~ regression$UNEM + regression$HGRAD + regression$INC, data = regression)
+fit
+```
+
+Predict the enrollment if the unemployment rate = 4.1%, HGrad = 17231, Inc = 3000
+```{r}
+unem = 4.1
+hgrad = 17231
+inc = 3000
+Enrollment = -9153.2545 + unem*450.1245 + hgrad*0.4065 + inc*4.2749
+Enrollment
+```
+
